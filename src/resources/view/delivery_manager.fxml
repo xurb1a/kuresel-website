@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" styleClass="manager-section" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DeliveryManagerController">
+
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+
+    <!-- Title -->
+    <Label styleClass="manager-title" text="Delivery Manager" />
+
+    <!-- Search Bar -->
+    <TextField fx:id="searchField" promptText="Search by ID, client, or status" styleClass="text-field" />
+
+    <!-- Deliveries Table -->
+    <TableView fx:id="deliveriesTable" editable="true" prefHeight="400" styleClass="table-view manager-table">
+        <columns>
+            <TableColumn fx:id="idCol" text="ID" />
+            <TableColumn fx:id="clientCol" text="Client" />
+            <TableColumn fx:id="addressCol" text="Address" />
+            <TableColumn fx:id="dateCol" text="Date" />
+            <TableColumn fx:id="statusCol" text="Status" />
+            <TableColumn fx:id="actionCol" text="Actions" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+
+</VBox>

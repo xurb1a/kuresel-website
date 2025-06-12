@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+<?import java.net.URL?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="controller.ProductsController"
+      spacing="15" alignment="TOP_CENTER"
+      prefHeight="600.0" prefWidth="800.0"
+      VBox.vgrow="ALWAYS">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+
+    <!-- Title Section -->
+    <Label text="Browse Products" styleClass="dashboard-title"/>
+
+    <!-- Search Section -->
+    <HBox spacing="10" alignment="CENTER" maxWidth="600">
+        <Label text="Search:" styleClass="account-label"/>
+        <TextField fx:id="searchField" promptText="Search by name..." styleClass="text-field"
+                   HBox.hgrow="ALWAYS" maxWidth="400"/>
+    </HBox>
+
+    <!-- ScrollPane for Products -->
+    <ScrollPane fitToWidth="true" fitToHeight="true"
+                VBox.vgrow="ALWAYS"
+                styleClass="scroll-pane"
+                hbarPolicy="NEVER"
+                vbarPolicy="AS_NEEDED"
+                pannable="true">
+
+        <content>
+            <VBox alignment="TOP_CENTER" spacing="20">
+                <padding>
+                    <Insets top="10" right="10" bottom="20" left="10"/>
+                </padding>
+
+                <FlowPane fx:id="productFlow"
+                          hgap="20" vgap="20"
+                          alignment="TOP_CENTER"
+                          styleClass="flow-pane"
+                          prefWrapLength="1200">
+                    <!-- Products will be dynamically added here -->
+                </FlowPane>
+            </VBox>
+        </content>
+    </ScrollPane>
+</VBox>

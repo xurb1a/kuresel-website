@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<?import java.net.URL?>
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.SignupController" prefWidth="800" prefHeight="500">
+
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+
+    <!-- LEFT SIDE: Image -->
+    <StackPane fx:id="leftPane" prefWidth="400" styleClass="login-left">
+        <ImageView fx:id="storeImage" fitWidth="400" preserveRatio="true"/>
+    </StackPane>
+
+    <!-- RIGHT SIDE: Signup Form -->
+    <VBox fx:id="formPane" alignment="CENTER" spacing="12" prefWidth="400" styleClass="form-container">
+        <Label text="Create Account" styleClass="form-title"/>
+        <TextField fx:id="nameField" promptText="Full Name" styleClass="form-field"/>
+        <TextField fx:id="emailField" promptText="Email" styleClass="form-field"/>
+        <PasswordField fx:id="passwordField" promptText="Password" styleClass="form-field"/>
+        <TextField fx:id="phoneField" promptText="Phone Number" styleClass="form-field"/>
+        <TextField fx:id="addressField" promptText="Address" styleClass="form-field"/>
+        <Label fx:id="errorLabel" textFill="red" visible="false"/>
+
+        <Button text="Sign Up" onAction="#handleSignUp" styleClass="form-button"/>
+        <Hyperlink text="Already have an account? Log in" onAction="#goToLogin" styleClass="form-link"/>
+    </VBox>
+</HBox>

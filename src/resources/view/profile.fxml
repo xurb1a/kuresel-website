@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" spacing="20" styleClass="dashboard-container manager-section" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProfileController">
+
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+
+    <!-- Title -->
+    <Label styleClass="manager-title" text="User Profile" />
+
+    <!-- Profile Info Section -->
+    <GridPane hgap="15" maxWidth="600" styleClass="stat-card" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="120.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="380.0" />
+        </columnConstraints>
+
+        <Label styleClass="account-label" text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="nameField" editable="false" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label styleClass="account-label" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField fx:id="emailField" editable="false" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label styleClass="account-label" text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <TextField fx:id="phoneField" editable="false" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label styleClass="account-label" text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <TextField fx:id="addressField" editable="false" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+        <!-- Action Buttons -->
+        <HBox alignment="CENTER_LEFT" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Button fx:id="editButton" onAction="#handleEditProfile" styleClass="manager-button" text="Edit Profile" />
+            <Button fx:id="saveButton" onAction="#handleSaveChanges" styleClass="manager-button" text="Save Changes" visible="false" />
+            <Button fx:id="cancelButton" onAction="#handleCancelEdit" styleClass="manager-button secondary" text="Cancel" visible="false" />
+        </HBox>
+        <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+        </rowConstraints>
+    </GridPane>
+
+    <!-- Password Change Section -->
+    <VBox maxWidth="600" prefHeight="323.0" prefWidth="565.0" spacing="10" styleClass="stat-card">
+        <Label alignment="CENTER" contentDisplay="CENTER" nodeOrientation="LEFT_TO_RIGHT" text="Change Password" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold Italic" size="19.0" />
+            </font></Label>
+
+        <GridPane hgap="15" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="100.0" prefWidth="120.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="380.0" />
+            </columnConstraints>
+
+            <Label styleClass="account-label" text="Current Password:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <PasswordField fx:id="currentPasswordField" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Label styleClass="account-label" text="New Password:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <PasswordField fx:id="newPasswordField" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label styleClass="account-label" text="Confirm New Password:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <PasswordField fx:id="confirmPasswordField" styleClass="form-field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Button fx:id="changePasswordButton" onAction="#handleChangePassword" styleClass="manager-button" text="Change Password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+
+        <Label fx:id="passwordErrorLabel" styleClass="error" text="Passwords do not match." visible="false" />
+    </VBox>
+</VBox>

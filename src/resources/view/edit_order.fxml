@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="441.0" prefWidth="803.0" spacing="15" styleClass="manager-section" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditOrderController">
+
+    <padding>
+        <Insets bottom="30" left="40" right="40" top="30" />
+    </padding>
+
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+
+    <!-- Title -->
+    <Label styleClass="manager-title" text="Edit Order" />
+
+    <!-- Grid Form -->
+    <GridPane hgap="10" prefHeight="276.0" prefWidth="741.0" vgap="15">
+        <Label styleClass="account-label" text="Order ID:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <font>
+                <Font size="11.0" />
+            </font>
+        </Label>
+        <Label fx:id="orderIdLabel" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+        <Label styleClass="account-label" text="Client:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label fx:id="clientLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+        <Label styleClass="account-label" text="Order Date:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <Label fx:id="dateLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+        <Label styleClass="account-label" text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <ComboBox fx:id="statusComboBox" styleClass="combo-box" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <items>
+                <FXCollections fx:factory="observableArrayList" />
+            </items>
+        </ComboBox>
+
+        <Label styleClass="account-label" text="Delivery City:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <Label fx:id="deliveryCityLabel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+        <Label styleClass="account-label" text="Estimated Delivery:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+        <Label fx:id="estimatedDeliveryLabel" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+        <Label styleClass="account-label" text="Payment Method:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <Label fx:id="paymentMethodLabel" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+        <Label styleClass="account-label" text="Amount:" GridPane.rowIndex="7" />
+        <Label fx:id="paymentAmountLabel" styleClass="stats-value" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+        <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+        </rowConstraints>
+    </GridPane>
+
+    <!-- Action Buttons -->
+    <HBox alignment="CENTER" spacing="20">
+        <Button fx:id="saveButton" onAction="#handleSave" styleClass="manager-button" text="Save Changes" />
+        <Button fx:id="cancelButton" onAction="#handleCancel" styleClass="manager-button secondary" text="Cancel" />
+    </HBox>
+    <effect>
+        <InnerShadow />
+    </effect>
+
+</VBox>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="442.0" prefWidth="526.0" spacing="15" styleClass="manager-section" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditProductController">
+
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+
+    <!-- Title -->
+    <Label styleClass="manager-title" text="Edit Product" />
+
+    <!-- Input Fields -->
+    <TextField fx:id="nameField" promptText="Product Name" styleClass="text-field" />
+    <TextField fx:id="priceField" promptText="Price" styleClass="text-field" />
+    <TextField fx:id="stockField" promptText="Stock" styleClass="text-field" />
+    <TextField fx:id="descriptionField" promptText="Description" styleClass="text-field" />
+
+    <!-- Action Buttons -->
+    <HBox alignment="CENTER" spacing="10">
+        <Button onAction="#handleSave" styleClass="manager-button" text="Save" />
+        <Button onAction="#handleCancel" styleClass="manager-button secondary" text="Cancel" />
+    </HBox>
+</VBox>

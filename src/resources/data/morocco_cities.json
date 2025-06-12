@@ -1,0 +1,76 @@
+{
+  "cities": [
+    {
+      "name": "Khouribga",
+      "deliveryFee": 10.0,
+      "deliveryDays": 1,
+      "region": "Béni Mellal-Khénifra"
+    },
+    {
+      "name": "Casablanca",
+      "deliveryFee": 20.0,
+      "deliveryDays": 2,
+      "region": "Casablanca-Settat"
+    },
+    {
+      "name": "Rabat",
+      "deliveryFee": 25.0,
+      "deliveryDays": 2,
+      "region": "Rabat-Salé-Kénitra"
+    },
+    {
+      "name": "Marrakech",
+      "deliveryFee": 30.0,
+      "deliveryDays": 3,
+      "region": "Marrakech-Safi"
+    },
+    {
+      "name": "Fès",
+      "deliveryFee": 35.0,
+      "deliveryDays": 3,
+      "region": "Fès-Meknès"
+    },
+    {
+      "name": "Tangier",
+      "deliveryFee": 40.0,
+      "deliveryDays": 4,
+      "region": "Tanger-Tétouan-Al Hoceïma"
+    },
+    {
+      "name": "Agadir",
+      "deliveryFee": 45.0,
+      "deliveryDays": 4,
+      "region": "Souss-Massa"
+    },
+    {
+      "name": "Oujda",
+      "deliveryFee": 50.0,
+      "deliveryDays": 5,
+      "region": "Oriental"
+    },
+    {
+      "name": "Kenitra",
+      "deliveryFee": 22.0,
+      "deliveryDays": 2,
+      "region": "Rabat-Salé-Kénitra"
+    },
+    {
+      "name": "Tetouan",
+      "deliveryFee": 38.0,
+      "deliveryDays": 4,
+      "region": "Tanger-Tétouan-Al Hoceïma"
+    },
+    {
+      "name": "Safi",
+      "deliveryFee": 28.0,
+      "deliveryDays": 3,
+      "region": "Marrakech-Safi"
+    },
+    {
+      "name": "El Jadida",
+      "deliveryFee": 25.0,
+      "deliveryDays": 2,
+      "region": "Casablanca-Settat"
+    }
+  ]
+}

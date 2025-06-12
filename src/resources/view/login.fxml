@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<?import java.net.URL?>
+<HBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.LoginController" prefWidth="800" prefHeight="500">
+
+    <stylesheets>
+        <URL value="@styles.css"/>
+    </stylesheets>
+
+    <!-- LEFT SIDE: Image -->
+    <StackPane fx:id="leftPane" prefWidth="400" styleClass="login-left">
+        <ImageView fx:id="storeImage" fitWidth="400" preserveRatio="true"/>
+    </StackPane>
+
+    <!-- RIGHT SIDE: Login Form -->
+    <VBox fx:id="formPane" alignment="CENTER" spacing="15" prefWidth="400" styleClass="form-container">
+        <Label text="Login" styleClass="form-title"/>
+        <TextField fx:id="emailField" promptText="Email" styleClass="form-field"/>
+        <PasswordField fx:id="passwordField" promptText="Password" styleClass="form-field"/>
+        <Label fx:id="errorLabel" textFill="red" visible="false"/>
+
+        <Button text="Login" onAction="#handleLogin" styleClass="form-button"/>
+        <Hyperlink text="Create Account" onAction="#goToSignUp" styleClass="form-link"/>
+    </VBox>
+</HBox>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<BorderPane fx:id="dashboardRoot" prefHeight="894.0" prefWidth="1091.0" styleClass="dashboard-root" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardController">
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+
+    <top>
+        <VBox styleClass="navbar-container">
+            <!-- Main Navigation Bar -->
+            <HBox fx:id="topBar" styleClass="main-navbar" prefHeight="70">
+                <padding>
+                    <Insets top="0" bottom="0" left="25" right="25"/>
+                </padding>
+
+                <!-- Logo Section -->
+                <HBox styleClass="logo-section" alignment="CENTER_LEFT" spacing="15">
+                    <ImageView fitHeight="45" preserveRatio="true" styleClass="logo-image">
+                        <image>
+                            <Image url="/images/kuresel.png" />
+                        </image>
+                    </ImageView>
+                    <Label text="KURESEL" styleClass="brand-name" />
+                </HBox>
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <!-- Navigation Links -->
+                <HBox fx:id="clientLinks" id="clientLinks" styleClass="nav-links-container" spacing="5" alignment="CENTER">
+                    <Button fx:id="homeBtnClient" text="Home" onAction="#handleHomeClick" styleClass="nav-link-btn" />
+                    <Button fx:id="productsBtnClient" text="Products" onAction="#handleProductsClick" styleClass="nav-link-btn" />
+                    <Button fx:id="cartBtnClient" text="Cart" onAction="#handleCartClick" styleClass="nav-link-btn" />
+                    <Button fx:id="ordersBtnClient" text="Orders" onAction="#handleOrdersClick" styleClass="nav-link-btn" />
+                    <Button fx:id="profileBtnClient" text="Profile" onAction="#handleProfileClick" styleClass="nav-link-btn" />
+                </HBox>
+
+                <HBox fx:id="adminLinks" id="adminLinks" styleClass="nav-links-container" spacing="5" alignment="CENTER">
+                    <Button fx:id="homeBtnAdmin" text="Dashboard" onAction="#handleHomeClick" styleClass="nav-link-btn" />
+                    <Button fx:id="productManagerBtn" text="Products" onAction="#handleProductManagerClick" styleClass="nav-link-btn" />
+                    <Button fx:id="orderManagerBtn" text="Orders" onAction="#handleOrderManagerClick" styleClass="nav-link-btn" />
+                    <Button fx:id="clientManagerBtn" text="Clients" onAction="#handleClientManagerClick" styleClass="nav-link-btn" />
+                    <Button fx:id="deliveryManagerBtn" text="Delivery" onAction="#handleDeliveryManagerClick" styleClass="nav-link-btn" />
+                    <Button fx:id="reportsBtn" text="Reports" onAction="#handleReportsClick" styleClass="nav-link-btn" />
+                </HBox>
+
+                <!-- Add after adminLinks HBox -->
+                <HBox fx:id="deliveryLinks" id="deliveryLinks" styleClass="nav-links-container" spacing="5" alignment="CENTER">
+                    <Button fx:id="homeBtnDelivery" text="Dashboard" onAction="#handleDeliveryHomeClick" styleClass="nav-link-btn" />
+                    <Button fx:id="availableOrdersBtn" text="Available Orders" onAction="#handleAvailableOrdersClick" styleClass="nav-link-btn" />
+                    <Button fx:id="myDeliveriesBtn" text="My Deliveries" onAction="#handleMyDeliveriesClick" styleClass="nav-link-btn" />
+                    <Button fx:id="earningsBtn" text="Earnings" onAction="#handleEarningsClick" styleClass="nav-link-btn" />
+                </HBox>
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <!-- User Info Section -->
+                <HBox styleClass="user-info-section" spacing="15" alignment="CENTER">
+                    <VBox styleClass="date-time-container" alignment="CENTER_RIGHT" spacing="2">
+                        <Label fx:id="currentDateLabel" styleClass="current-date" />
+                        <Label text="Today" styleClass="date-subtitle" />
+                    </VBox>
+
+                    <Separator orientation="VERTICAL" styleClass="nav-separator" />
+
+                    <VBox styleClass="user-details" alignment="CENTER_LEFT" spacing="2">
+                        <Label fx:id="welcomeText" text="Welcome, User" styleClass="welcome-text" />
+                        <Label fx:id="userTypeText" text="Client" styleClass="user-role" />
+                    </VBox>
+
+                    <Button fx:id="logoutBtn" text="Logout" onAction="#handleLogout" styleClass="logout-button" />
+                </HBox>
+            </HBox>
+
+            <!-- Navigation Underline -->
+            <HBox styleClass="nav-underline" prefHeight="3" />
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane fx:id="contentArea" styleClass="main-content-area" />
+    </center>
+</BorderPane>

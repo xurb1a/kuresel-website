@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="725.0" prefWidth="1000.0" spacing="25" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClientDashboardController">
+
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+
+    <!-- Welcome Section -->
+    <VBox alignment="CENTER" prefHeight="192.0" prefWidth="1000.0" spacing="5" styleClass="dashboard-container">
+        <Label fx:id="welcomeLabel" contentDisplay="CENTER" styleClass="welcome-title" text="Welcome back, User" textAlignment="CENTER" />
+        <Label fx:id="memberSinceLabel" styleClass="stats-label text-center" text="Member since: ..." textFill="#7300ff">
+            <font>
+                <Font name="Cascadia Code Regular" size="13.0" />
+            </font></Label>
+    </VBox>
+
+    <!-- Quick Stats Section -->
+    <HBox alignment="CENTER" prefHeight="132.0" prefWidth="1000.0" spacing="40" styleClass="scroll-bar">
+        <VBox alignment="CENTER" prefHeight="104.0" prefWidth="180" styleClass="stats-card">
+            <Label alignment="CENTER" styleClass="card-title" text="Total Orders" textFill="#8fdffc" />
+            <Label fx:id="totalOrdersLabel" styleClass="stats-value text-center" text="0" textFill="#8fdffc" />
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="109.0" prefWidth="204.0" styleClass="stats-card">
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="25.0" prefWidth="122.0" styleClass="card-title text-center" text="Active Orders" textAlignment="CENTER" textFill="#8fdffc" />
+            <Label fx:id="activeOrdersLabel" styleClass="stats-value text-center" text="0" textFill="#8fdffc" />
+        </VBox>
+        <VBox alignment="CENTER" prefHeight="75.0" prefWidth="180" styleClass="stats-card">
+            <Label styleClass="card-title text-center" text="Items in Cart" textFill="#8fdffc" />
+            <Label fx:id="cartItemsLabel" styleClass="stats-value text-center" text="0" textFill="#8fdffc" />
+        </VBox>
+    </HBox>
+
+    <!-- Recent Orders Section -->
+    <VBox alignment="CENTER" prefHeight="319.0" prefWidth="1000.0" spacing="15" styleClass="content-area">
+        <Label styleClass="card-title text-center" text="Recent Orders" textFill="#6411a4">
+            <font>
+                <Font name="System Bold" size="20.0" />
+            </font></Label>
+        <TableView fx:id="recentOrdersTable" editable="true" prefHeight="196.0" prefWidth="800.0" styleClass="manager-table">
+            <columns>
+                <TableColumn fx:id="orderIdCol" prefWidth="120" text="Order ID" />
+                <TableColumn fx:id="orderDateCol" prefWidth="180" text="Date" />
+                <TableColumn fx:id="orderStatusCol" prefWidth="180" text="Status" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+        <Button onAction="#goToOrders" styleClass="action-button" text="View All Orders" />
+    </VBox>
+
+    <!-- Quick Actions -->
+    <HBox alignment="CENTER" prefHeight="98.0" prefWidth="1000.0" spacing="20">
+        <Button onAction="#goToProducts" styleClass="icon-text-button" text="Browse Products" />
+        <Button onAction="#goToCart" styleClass="icon-text-button" text="Go to Cart" />
+    </HBox>
+
+</VBox>

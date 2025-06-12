@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.ScrollPane?>
+<VBox alignment="TOP_CENTER" spacing="15" styleClass="manager-section" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductManagerController">
+
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <stylesheets>
+        <URL value="@styles.css" />
+    </stylesheets>
+
+    <!-- Product Input Fields -->
+    <VBox spacing="15" alignment="CENTER" styleClass="input-container">
+        <TextField fx:id="nameField" promptText="Product Name" styleClass="text-field" />
+        <TextField fx:id="priceField" promptText="Price" styleClass="text-field" />
+        <TextField fx:id="stockField" promptText="Stock" styleClass="text-field" />
+        <TextField fx:id="descriptionField" promptText="Description" styleClass="text-field" />
+
+        <HBox alignment="CENTER" spacing="15">
+            <Button onAction="#handleChooseImage" styleClass="image-button" text="Choose Image" />
+            <Button onAction="#handleAddProduct" styleClass="add-button" text="Add Product" />
+        </HBox>
+    </VBox>
+
+    <!-- Search -->
+    <HBox alignment="CENTER" spacing="10">
+        <Label styleClass="search-label" text="Search:" />
+        <TextField fx:id="searchField" promptText="Search by name or ID" styleClass="search-field" />
+    </HBox>
+
+    <!-- Product Display Area -->
+    <ScrollPane fitToWidth="true" fitToHeight="true"
+                VBox.vgrow="ALWAYS"
+                styleClass="scroll-pane"
+                hbarPolicy="NEVER"
+                vbarPolicy="AS_NEEDED">
+        <content>
+            <FlowPane fx:id="productFlow"
+                      hgap="20" vgap="20"
+                      alignment="TOP_CENTER"
+                      styleClass="product-flow-pane"/>
+        </content>
+    </ScrollPane>
+</VBox>
