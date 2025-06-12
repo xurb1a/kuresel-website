@@ -1,0 +1,308 @@
+<html lang="fr"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base de Données</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        
+        .table-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .table-card:hover {
+            transform: scale(1.02);
+            border-color: #3b82f6;
+            box-shadow: 0 15px 30px rgba(59, 130, 246, 0.1);
+        }
+        
+        .connection-line {
+            stroke: #6366f1;
+            stroke-width: 2;
+            fill: none;
+            stroke-dasharray: 5,5;
+            animation: dash 2s linear infinite;
+        }
+        
+        @keyframes dash {
+            to { stroke-dashoffset: -10; }
+        }
+        
+        .db-icon {
+            animation: db-pulse 3s ease-in-out infinite;
+        }
+        
+        @keyframes db-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    </style>
+
+</head>
+<body class="m-0 p-0" style="margin: 0px; overflow: hidden;">
+    <div class="slide-container p-12">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">
+                Base de Données
+            </h1>
+            <div class="w-24 h-1 bg-indigo-600 mx-auto rounded-full"></div>
+            <p class="text-xl text-gray-600 mt-4">Structure MySQL et modèles de données</p>
+        </div>
+        
+        <!-- Database Overview -->
+        <div class="flex items-center justify-center mb-8">
+            <div class="text-center">
+                <div class="w-24 h-24 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 db-icon">
+                    <i class="fas fa-database text-white text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">KURESEL Database</h3>
+                
+            </div>
+        </div>
+        
+        <!-- Database Tables Grid -->
+        <div class="grid grid-cols-3 gap-6 h-72">
+            <!-- Core Tables -->
+            <div class="space-y-4">
+                <h4 class="text-lg font-bold text-gray-800 text-center mb-4">Tables Principales</h4>
+                
+                <!-- Clients Table -->
+                <div class="table-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 shadow-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-users text-blue-600 text-lg mr-3"></i>
+                        <h5 class="font-bold text-blue-800">clients</h5>
+                    </div>
+                    <div class="text-xs space-y-1">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">id</span>
+                            <span class="text-blue-600 font-medium">INT PK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">nom</span>
+                            <span class="text-gray-500">VARCHAR</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">email</span>
+                            <span class="text-gray-500">VARCHAR</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">type</span>
+                            <span class="text-purple-600 font-medium">INT</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Products Table -->
+                <div class="table-card bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 shadow-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-box text-green-600 text-lg mr-3"></i>
+                        <h5 class="font-bold text-green-800">produits</h5>
+                    </div>
+                    <div class="text-xs space-y-1">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">id</span>
+                            <span class="text-blue-600 font-medium">INT PK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">nom</span>
+                            <span class="text-gray-500">VARCHAR</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">prix</span>
+                            <span class="text-gray-500">DECIMAL</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">stock</span>
+                            <span class="text-gray-500">INT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Transaction Tables -->
+            <div class="space-y-4">
+                <h4 class="text-lg font-bold text-gray-800 text-center mb-4">Tables Transactionnelles</h4>
+                
+                <!-- Orders Table -->
+                <div class="table-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-4 shadow-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-shopping-cart text-purple-600 text-lg mr-3"></i>
+                        <h5 class="font-bold text-purple-800">commandes</h5>
+                    </div>
+                    <div class="text-xs space-y-1">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">id</span>
+                            <span class="text-blue-600 font-medium">INT PK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">client_id</span>
+                            <span class="text-orange-600 font-medium">INT FK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">date_commande</span>
+                            <span class="text-gray-500">DATETIME</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">statut</span>
+                            <span class="text-gray-500">VARCHAR</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Lines Table -->
+                <div class="table-card bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-4 shadow-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-list text-orange-600 text-lg mr-3"></i>
+                        <h5 class="font-bold text-orange-800">lignes_commande</h5>
+                    </div>
+                    <div class="text-xs space-y-1">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">id</span>
+                            <span class="text-blue-600 font-medium">INT PK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">commande_id</span>
+                            <span class="text-orange-600 font-medium">INT FK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">produit_id</span>
+                            <span class="text-orange-600 font-medium">INT FK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">quantite</span>
+                            <span class="text-gray-500">INT</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Delivery Tables -->
+            <div class="space-y-4">
+                <h4 class="text-lg font-bold text-gray-800 text-center mb-4">Tables Livraison</h4>
+                
+                <!-- Deliveries Table -->
+                <div class="table-card bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-4 shadow-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-truck text-red-600 text-lg mr-3"></i>
+                        <h5 class="font-bold text-red-800">livraisons</h5>
+                    </div>
+                    <div class="text-xs space-y-1">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">id</span>
+                            <span class="text-blue-600 font-medium">INT PK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">commande_id</span>
+                            <span class="text-orange-600 font-medium">INT FK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">livreur_id</span>
+                            <span class="text-orange-600 font-medium">INT FK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">statut</span>
+                            <span class="text-gray-500">VARCHAR</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Payments Table -->
+                <div class="table-card bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-xl p-4 shadow-lg">
+                    <div class="flex items-center mb-3">
+                        <i class="fas fa-credit-card text-indigo-600 text-lg mr-3"></i>
+                        <h5 class="font-bold text-indigo-800">paiements</h5>
+                    </div>
+                    <div class="text-xs space-y-1">
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">id</span>
+                            <span class="text-blue-600 font-medium">INT PK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">commande_id</span>
+                            <span class="text-orange-600 font-medium">INT FK</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">montant</span>
+                            <span class="text-gray-500">DECIMAL</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-gray-600">methode</span>
+                            <span class="text-gray-500">VARCHAR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Java Models -->
+        <div class="mt-8">
+            <h3 class="text-2xl font-bold text-gray-800 text-center mb-6">Modèles Java Correspondants</h3>
+            
+            <div class="grid grid-cols-5 gap-4">
+                <div class="bg-white rounded-lg p-4 shadow-lg text-center">
+                    <i class="fas fa-file-code text-blue-600 text-2xl mb-2"></i>
+                    <h5 class="font-bold text-gray-800 text-sm">Client.java</h5>
+                    <p class="text-xs text-gray-600">Modèle utilisateur</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-4 shadow-lg text-center">
+                    <i class="fas fa-file-code text-green-600 text-2xl mb-2"></i>
+                    <h5 class="font-bold text-gray-800 text-sm">Produit.java</h5>
+                    <p class="text-xs text-gray-600">Modèle produit</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-4 shadow-lg text-center">
+                    <i class="fas fa-file-code text-purple-600 text-2xl mb-2"></i>
+                    <h5 class="font-bold text-gray-800 text-sm">Commande.java</h5>
+                    <p class="text-xs text-gray-600">Modèle commande</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-4 shadow-lg text-center">
+                    <i class="fas fa-file-code text-red-600 text-2xl mb-2"></i>
+                    <h5 class="font-bold text-gray-800 text-sm">Livraison.java</h5>
+                    <p class="text-xs text-gray-600">Modèle livraison</p>
+                </div>
+                
+                <div class="bg-white rounded-lg p-4 shadow-lg text-center">
+                    <i class="fas fa-file-code text-indigo-600 text-2xl mb-2"></i>
+                    <h5 class="font-bold text-gray-800 text-sm">Paiement.java</h5>
+                    <p class="text-xs text-gray-600">Modèle paiement</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Connection Info -->
+        <div class="mt-6 bg-gray-900 rounded-xl p-4 text-white">
+            <div class="flex items-center justify-center space-x-8 text-sm">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-server text-blue-400"></i>
+                    <span>DatabaseConnection.java</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-link text-green-400"></i>
+                    <span>JDBC Driver</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-shield-alt text-yellow-400"></i>
+                    <span>PreparedStatements</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-sync text-purple-400"></i>
+                    <span>Connection Pooling</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body></html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conclusion et Perspectives</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .geometric-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .achievement-card {
+            transition: all 0.4s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .success-icon {
+            animation: success-bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes success-bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        
+        .future-card {
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .future-card:hover {
+            border-color: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 255, 255, 0.15);
+        }
+        
+        .sparkle {
+            animation: sparkle 3s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body class="m-0 p-0">
+    <div class="slide-container flex flex-col justify-center p-12 relative">
+        <!-- Geometric Background -->
+        <div class="geometric-bg">
+            <svg width="100%" height="100%" viewBox="0 0 1280 720">
+                <circle cx="150" cy="100" r="60" fill="white" opacity="0.08"/>
+                <circle cx="1150" cy="150" r="80" fill="white" opacity="0.06"/>
+                <circle cx="200" cy="600" r="70" fill="white" opacity="0.09"/>
+                <circle cx="1100" cy="580" r="90" fill="white" opacity="0.07"/>
+                <polygon points="800,80 920,120 870,240 750,200" fill="white" opacity="0.05"/>
+                <polygon points="80,350 180,400 130,520 30,470" fill="white" opacity="0.07"/>
+                <circle cx="640" cy="360" r="200" fill="white" opacity="0.03"/>
+            </svg>
+        </div>
+        
+        <!-- Header -->
+        <div class="text-center mb-8 z-10 relative">
+            <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6 success-icon">
+                <i class="fas fa-trophy text-white text-3xl"></i>
+            </div>
+            <h1 class="text-5xl font-bold text-white mb-4">
+                Conclusion et Perspectives
+            </h1>
+            <div class="w-32 h-1 bg-white bg-opacity-50 mx-auto rounded-full"></div>
+        </div>
+        
+        <!-- Achievements Grid -->
+        <div class="grid grid-cols-3 gap-6 mb-8 z-10 relative">
+            <!-- Technical Achievement -->
+            <div class="achievement-card bg-white bg-opacity-10 rounded-xl p-6 text-white">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-green-500 bg-opacity-80 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-code text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Réalisations Techniques</h3>
+                </div>
+                <div class="space-y-2 text-sm opacity-90">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-green-400 w-4"></i>
+                        <span>Architecture MVC complète</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-green-400 w-4"></i>
+                        <span>Interface JavaFX responsive</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-green-400 w-4"></i>
+                        <span>Base de données MySQL intégrée</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-green-400 w-4"></i>
+                        <span>Système multi-utilisateurs</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Functional Achievement -->
+            <div class="achievement-card bg-white bg-opacity-10 rounded-xl p-6 text-white">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-500 bg-opacity-80 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Fonctionnalités Clés</h3>
+                </div>
+                <div class="space-y-2 text-sm opacity-90">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-blue-400 w-4"></i>
+                        <span>Gestion complète e-commerce</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-blue-400 w-4"></i>
+                        <span>Système de livraison intégré</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-blue-400 w-4"></i>
+                        <span>Tableaux de bord dynamiques</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-blue-400 w-4"></i>
+                        <span>Authentification sécurisée</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Impact Achievement -->
+            <div class="achievement-card bg-white bg-opacity-10 rounded-xl p-6 text-white">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-purple-500 bg-opacity-80 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-chart-line text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold">Impact du Projet</h3>
+                </div>
+                <div class="space-y-2 text-sm opacity-90">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-purple-400 w-4"></i>
+                        <span>Solution e-commerce complète</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-purple-400 w-4"></i>
+                        <span>Expérience utilisateur optimisée</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-purple-400 w-4"></i>
+                        <span>Gestion efficace des livraisons</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check-circle text-purple-400 w-4"></i>
+                        <span>Évolutivité et maintenabilité</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Future Perspectives -->
+        <div class="z-10 relative">
+            <h2 class="text-3xl font-bold text-white text-center mb-6">
+                <i class="fas fa-rocket mr-3 sparkle"></i>
+                Perspectives d'Évolution
+            </h2>
+            
+            <div class="grid grid-cols-2 gap-8">
+                <!-- Technical Improvements -->
+                <div class="future-card bg-white bg-opacity-10 rounded-xl p-6 text-white">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-cogs text-yellow-400 mr-3"></i>
+                        Améliorations Techniques
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-mobile-alt text-yellow-400 w-5"></i>
+                            <span>Application mobile (Android/iOS)</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-cloud text-yellow-400 w-5"></i>
+                            <span>Migration vers le cloud</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-shield-alt text-yellow-400 w-5"></i>
+                            <span>Sécurité renforcée (OAuth, JWT)</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-sync text-yellow-400 w-5"></i>
+                            <span>API REST pour intégrations</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Business Features -->
+                <div class="future-card bg-white bg-opacity-10 rounded-xl p-6 text-white">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i class="fas fa-lightbulb text-orange-400 mr-3"></i>
+                        Nouvelles Fonctionnalités
+                    </h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-brain text-orange-400 w-5"></i>
+                            <span>Recommandations IA</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marked-alt text-orange-400 w-5"></i>
+                            <span>Géolocalisation en temps réel</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-comments text-orange-400 w-5"></i>
+                            <span>Chat client-livreur</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-star text-orange-400 w-5"></i>
+                            <span>Système de notation avancé</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Final Message -->
+        <div class="text-center mt-8 z-10 relative">
+            <div class="bg-white bg-opacity-20 rounded-xl p-6 backdrop-blur-sm">
+                <h3 class="text-2xl font-bold text-white mb-3">
+                    KURESEL : Une Base Solide pour l'Avenir
+                </h3>
+                <p class="text-lg text-white opacity-90 leading-relaxed">
+                    Ce projet démontre la maîtrise des technologies Java et JavaFX pour créer 
+                    une solution e-commerce complète, évolutive et prête pour les défis futurs du commerce électronique.
+                </p>
+                
+                <div class="flex justify-center space-x-8 mt-6">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white">100%</div>
+                        <div class="text-sm text-white opacity-75">Fonctionnel</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white">3</div>
+                        <div class="text-sm text-white opacity-75">Types d'utilisateurs</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white">∞</div>
+                        <div class="text-sm text-white opacity-75">Possibilités</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
