@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonctionnalités Administrateur</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        
+        .admin-card {
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .admin-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .admin-card:hover::before {
+            left: 100%;
+        }
+        
+        .admin-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1rem;
+            height: 100%;
+        }
+        
+        .stat-counter {
+            animation: count-up 2s ease-out;
+        }
+        
+        @keyframes count-up {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="m-0 p-0">
+    <div class="slide-container p-12">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">
+                Fonctionnalités Administrateur
+            </h1>
+            <div class="w-24 h-1 bg-purple-600 mx-auto rounded-full"></div>
+            <p class="text-xl text-gray-600 mt-4">Outils de gestion complète de la plateforme</p>
+        </div>
+        
+        <!-- Main Admin Features Grid -->
+        <div class="grid grid-cols-2 gap-8 h-80">
+            <!-- Left Column: Management Tools -->
+            <div class="space-y-4">
+                <!-- Product Management -->
+                <div class="admin-card bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-boxes text-2xl mr-3"></i>
+                                <h3 class="text-xl font-bold">Gestion des Produits</h3>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>• Ajout de produits</div>
+                                <div>• Modification des prix</div>
+                                <div>• Gestion du stock</div>
+                                <div>• Suppression d'articles</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold stat-counter">15+</div>
+                            <div class="text-sm opacity-80">Produits</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Management -->
+                <div class="admin-card bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-clipboard-list text-2xl mr-3"></i>
+                                <h3 class="text-xl font-bold">Gestion des Commandes</h3>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>• Suivi des commandes</div>
+                                <div>• Modification du statut</div>
+                                <div>• Historique complet</div>
+                                <div>• Rapports de vente</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold stat-counter">50+</div>
+                            <div class="text-sm opacity-80">Commandes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: User & Delivery Management -->
+            <div class="space-y-4">
+                <!-- Client Management -->
+                <div class="admin-card bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-users-cog text-2xl mr-3"></i>
+                                <h3 class="text-xl font-bold">Gestion des Clients</h3>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>• Liste des clients</div>
+                                <div>• Profils détaillés</div>
+                                <div>• Historique d'achats</div>
+                                <div>• Gestion des comptes</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold stat-counter">100+</div>
+                            <div class="text-sm opacity-80">Clients</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Delivery Management -->
+                <div class="admin-card bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-truck text-2xl mr-3"></i>
+                                <h3 class="text-xl font-bold">Gestion des Livreurs</h3>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4 text-sm">
+                                <div>• Attribution des livraisons</div>
+                                <div>• Suivi des performances</div>
+                                <div>• Gestion des revenus</div>
+                                <div>• Statistiques détaillées</div>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold stat-counter">25+</div>
+                            <div class="text-sm opacity-80">Livreurs</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dashboard Features -->
+        <div class="mt-8">
+            <h3 class="text-2xl font-bold text-gray-800 text-center mb-6">Tableau de Bord Administrateur</h3>
+            
+            <div class="grid grid-cols-4 gap-6">
+                <!-- Analytics -->
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-blue-600 text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Analytiques</h4>
+                    <p class="text-sm text-gray-600">Statistiques de vente et performance</p>
+                </div>
+                
+                <!-- Inventory -->
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-warehouse text-green-600 text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Inventaire</h4>
+                    <p class="text-sm text-gray-600">Gestion du stock en temps réel</p>
+                </div>
+                
+                <!-- Reports -->
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-file-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Rapports</h4>
+                    <p class="text-sm text-gray-600">Génération de rapports détaillés</p>
+                </div>
+                
+                <!-- Settings -->
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-cogs text-orange-600 text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-2">Configuration</h4>
+                    <p class="text-sm text-gray-600">Paramètres de la plateforme</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Controllers Info -->
+        <div class="mt-6 bg-gray-100 rounded-xl p-4">
+            <div class="flex justify-center space-x-8 text-sm">
+                <div class="text-center">
+                    <span class="font-medium text-gray-800">ProductManagerController.java</span>
+                    <div class="text-gray-600">Gestion produits</div>
+                </div>
+                <div class="text-center">
+                    <span class="font-medium text-gray-800">ClientManagerController.java</span>
+                    <div class="text-gray-600">Gestion clients</div>
+                </div>
+                <div class="text-center">
+                    <span class="font-medium text-gray-800">DeliveryManagerController.java</span>
+                    <div class="text-gray-600">Gestion livreurs</div>
+                </div>
+                <div class="text-center">
+                    <span class="font-medium text-gray-800">AdminDashboardController.java</span>
+                    <div class="text-gray-600">Tableau de bord</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

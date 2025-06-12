@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonctionnalités Client</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            position: relative;
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: #3b82f6;
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+        }
+        
+        .shopping-flow {
+            position: relative;
+        }
+        
+        .flow-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            z-index: 1;
+        }
+        
+        .flow-step {
+            position: relative;
+            z-index: 2;
+            background: white;
+        }
+        
+        .icon-spin {
+            animation: spin-slow 4s linear infinite;
+        }
+        
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="m-0 p-0">
+    <div class="slide-container p-12">
+        <!-- Header -->
+        <div class="text-center mb-8">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">
+                Fonctionnalités Client
+            </h1>
+            <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+            <p class="text-xl text-gray-600 mt-4">Interface intuitive pour une expérience d'achat optimale</p>
+        </div>
+        
+        <!-- Shopping Flow -->
+        <div class="shopping-flow mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 text-center mb-6">Parcours d'Achat</h3>
+            
+            <div class="relative">
+                <div class="flow-line"></div>
+                <div class="flex justify-between items-center">
+                    <!-- Step 1: Browse -->
+                    <div class="flow-step bg-white rounded-full p-4 shadow-lg">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-search text-blue-600 text-2xl"></i>
+                        </div>
+                        <div class="text-center mt-2">
+                            <h4 class="font-bold text-sm text-gray-800">Navigation</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Add to Cart -->
+                    <div class="flow-step bg-white rounded-full p-4 shadow-lg">
+                        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-cart-plus text-green-600 text-2xl"></i>
+                        </div>
+                        <div class="text-center mt-2">
+                            <h4 class="font-bold text-sm text-gray-800">Panier</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: Checkout -->
+                    <div class="flow-step bg-white rounded-full p-4 shadow-lg">
+                        <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-credit-card text-purple-600 text-2xl"></i>
+                        </div>
+                        <div class="text-center mt-2">
+                            <h4 class="font-bold text-sm text-gray-800">Paiement</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4: Order -->
+                    <div class="flow-step bg-white rounded-full p-4 shadow-lg">
+                        <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-box text-orange-600 text-2xl"></i>
+                        </div>
+                        <div class="text-center mt-2">
+                            <h4 class="font-bold text-sm text-gray-800">Commande</h4>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5: Delivery -->
+                    <div class="flow-step bg-white rounded-full p-4 shadow-lg">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center">
+                            <i class="fas fa-truck text-red-600 text-2xl icon-spin"></i>
+                        </div>
+                        <div class="text-center mt-2">
+                            <h4 class="font-bold text-sm text-gray-800">Livraison</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features Grid -->
+        <div class="grid grid-cols-3 gap-6 h-72">
+            <!-- Products Navigation -->
+            <div class="feature-card bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-th-large text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800">Catalogue Produits</h3>
+                </div>
+                
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-blue-600 w-4"></i>
+                        <span class="text-gray-700">Affichage en grille</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-blue-600 w-4"></i>
+                        <span class="text-gray-700">Détails des produits</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-blue-600 w-4"></i>
+                        <span class="text-gray-700">Images haute qualité</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-blue-600 w-4"></i>
+                        <span class="text-gray-700">Prix et disponibilité</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4 text-xs text-blue-600 font-medium">
+                    Contrôleur: ProductsController.java
+                </div>
+            </div>
+            
+            <!-- Shopping Cart -->
+            <div class="feature-card bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-shopping-cart text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800">Panier d'Achat</h3>
+                </div>
+                
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-green-600 w-4"></i>
+                        <span class="text-gray-700">Ajout/suppression d'articles</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-green-600 w-4"></i>
+                        <span class="text-gray-700">Modification des quantités</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-green-600 w-4"></i>
+                        <span class="text-gray-700">Calcul automatique du total</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-green-600 w-4"></i>
+                        <span class="text-gray-700">Sauvegarde temporaire</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4 text-xs text-green-600 font-medium">
+                    Contrôleur: CartController.java
+                </div>
+            </div>
+            
+            <!-- Order Management -->
+            <div class="feature-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mr-4">
+                        <i class="fas fa-clipboard-list text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-800">Gestion Commandes</h3>
+                </div>
+                
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-purple-600 w-4"></i>
+                        <span class="text-gray-700">Historique des commandes</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-purple-600 w-4"></i>
+                        <span class="text-gray-700">Statut de livraison</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-purple-600 w-4"></i>
+                        <span class="text-gray-700">Détails des achats</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-check text-purple-600 w-4"></i>
+                        <span class="text-gray-700">Suivi en temps réel</span>
+                    </div>
+                </div>
+                
+                <div class="mt-4 text-xs text-purple-600 font-medium">
+                    Contrôleur: OrdersController.java
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Features -->
+        <div class="grid grid-cols-2 gap-8 mt-6">
+            <!-- Payment System -->
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center mr-3">
+                        <i class="fas fa-credit-card text-orange-600"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-800">Système de Paiement</h4>
+                </div>
+                <p class="text-sm text-gray-600">Interface sécurisée pour le processus de paiement avec validation des informations et confirmation de commande.</p>
+            </div>
+            
+            <!-- Profile Management -->
+            <div class="bg-white rounded-xl p-6 shadow-lg">
+                <div class="flex items-center mb-4">
+                    <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center mr-3">
+                        <i class="fas fa-user-edit text-indigo-600"></i>
+                    </div>
+                    <h4 class="text-lg font-semibold text-gray-800">Gestion du Profil</h4>
+                </div>
+                <p class="text-sm text-gray-600">Modification des informations personnelles, adresses de livraison et préférences utilisateur.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KURESEL - Plateforme E-commerce</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .geometric-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+        }
+        
+        .title-glow {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="m-0 p-0">
+    <div class="slide-container flex items-center justify-center relative">
+        <!-- Geometric Background -->
+        <div class="geometric-bg">
+            <svg width="100%" height="100%" viewBox="0 0 1280 720">
+                <circle cx="200" cy="150" r="80" fill="white" opacity="0.1"/>
+                <circle cx="1100" cy="200" r="120" fill="white" opacity="0.08"/>
+                <circle cx="300" cy="600" r="60" fill="white" opacity="0.12"/>
+                <circle cx="1000" cy="550" r="90" fill="white" opacity="0.09"/>
+                <polygon points="800,100 900,150 850,250 750,200" fill="white" opacity="0.06"/>
+                <polygon points="100,400 200,450 150,550 50,500" fill="white" opacity="0.08"/>
+            </svg>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="text-center z-10 px-8">
+            <!-- Logo/Icon -->
+            <div class="mb-8 floating-icon">
+                <div class="w-32 h-32 mx-auto bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm">
+                    <i class="fas fa-shopping-cart text-6xl text-white"></i>
+                </div>
+            </div>
+            
+            <!-- Main Title -->
+            <h1 class="text-7xl font-bold text-white mb-4 title-glow">
+                KURESEL
+            </h1>
+            
+            <!-- Subtitle -->
+            <h2 class="text-3xl font-light text-white mb-8 opacity-90">
+                Plateforme E-commerce Multi-Utilisateurs
+            </h2>
+            
+            <!-- Description -->
+            <p class="text-xl text-white opacity-80 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Une solution complète développée en JavaFX pour la gestion d'un système e-commerce 
+                avec interfaces dédiées pour clients, administrateurs et livreurs
+            </p>
+            
+            <!-- Tech Stack Icons -->
+            <div class="flex justify-center space-x-8 mb-8">
+                <div class="text-center pulse-animation">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-lg flex items-center justify-center backdrop-blur-sm mb-2">
+                        <i class="fab fa-java text-2xl text-white"></i>
+                    </div>
+                    <span class="text-sm text-white opacity-75">JavaFX</span>
+                </div>
+                <div class="text-center pulse-animation" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-lg flex items-center justify-center backdrop-blur-sm mb-2">
+                        <i class="fas fa-database text-2xl text-white"></i>
+                    </div>
+                    <span class="text-sm text-white opacity-75">MySQL</span>
+                </div>
+                <div class="text-center pulse-animation" style="animation-delay: 0.4s;">
+                    <div class="w-16 h-16 bg-white bg-opacity-20 rounded-lg flex items-center justify-center backdrop-blur-sm mb-2">
+                        <i class="fas fa-code text-2xl text-white"></i>
+                    </div>
+                    <span class="text-sm text-white opacity-75">FXML</span>
+                </div>
+            </div>
+            
+            <!-- Bottom Info -->
+            <div class="text-center">
+                <p class="text-lg text-white opacity-70">
+                    Présentation du Projet • 2024
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
